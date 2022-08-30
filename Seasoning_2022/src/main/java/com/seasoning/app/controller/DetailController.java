@@ -57,7 +57,7 @@ public class DetailController {
       return "/detail/food_detail";
    }
    @RequestMapping(value="/lodge_detail/{contentid}")
-   public String detail(@PathVariable("contentid") String contentid, Model model) throws IOException {
+   public String lodge_detail(@PathVariable("contentid") String contentid, Model model) throws IOException {
       
       LodgmentVO lodgeDetailVO = detailService.getLodgmentDetail(contentid) ;
       CommonDetailVO CommonDetailVO = detailService.getCommonDetail(contentid);

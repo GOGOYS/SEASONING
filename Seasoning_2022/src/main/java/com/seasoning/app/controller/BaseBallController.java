@@ -3,6 +3,8 @@ package com.seasoning.app.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,15 +45,15 @@ public class BaseBallController {
 			@PathVariable("tour_location") String tour,
 			@PathVariable("food_location") String food,
 			@PathVariable("lodgment_location") String lodgment, 
-			Model model) throws IOException {
+			HttpSession session) throws IOException {
 		
 		List<LocationVO> tourList = tourService.get_TourLocation(tour);
 		List<LocationVO> foodList = foodService.get_FoodLocation(food);
 		List<LocationVO> lodgmentList = lodgmentService.get_LodgmentLocation(lodgment);
 
-		model.addAttribute("TOURS",tourList);
-		model.addAttribute("FOODS",foodList);
-		model.addAttribute("LODGMENTS",lodgmentList);
+		session.setAttribute("TOURS",tourList);
+		session.setAttribute("FOODS",foodList);
+		session.setAttribute("LODGMENTS",lodgmentList);
 		return "/popular/popular";
 	}
 

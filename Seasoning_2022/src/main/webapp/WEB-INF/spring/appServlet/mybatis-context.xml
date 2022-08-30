@@ -15,14 +15,12 @@
 	<!-- DBMS 연결하는데 필요한 기본정보 설정 -->
 	<!-- BasicDataSource ds = new BasicDataSource() -->
 	<!-- property : setter method -->
-	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="driverClassName"
-			value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url"
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="st_db" />
-		<property name="password" value="1234" />
-	</bean>
+	  <bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
+      <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/seasoningdb"/>
+      <property name="username" value="root"/>
+      <property name="password" value="Gogoys1020!"/>
+   </bean>
 
 	<!-- SqlSessionFactory -->
 	<!-- Dao, Mapper 등을 사용하여 DB 연결하는 bean 생산기지 설정 -->

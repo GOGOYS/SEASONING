@@ -135,7 +135,7 @@
 	<footer></footer>
 </body>
 
-<script src="${rootPath}/static/js/fb_map.js?ver=2022-06-17-001"></script>
+<script src="${rootPath}/static/js/fb_map.js?ver=2022-08-30-004"></script>
 <script src="${rootPath}/static/js/btn.js?ver=2022-06-17-001"></script>
 <script src="${rootPath}/static/js/popular_button.js?ver=2022-06-17-001"></script>
 

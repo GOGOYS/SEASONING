@@ -40,6 +40,12 @@ public class DetailController {
       
       model.addAttribute("TOURDETAIL",tourDetailVO);
       model.addAttribute("COMMONDETAIL",CommonDetailVO);
+      
+      for(int i =0; i < AroundList.size(); i++) {
+    	  String dist = AroundList.get(i).dist;
+    	  String [] distArr = dist.split("[.]");
+    	  AroundList.get(i).setDist(distArr[0]);
+      }
       model.addAttribute("AROUND",AroundList);
       return "/detail/tour_detail";
    }
@@ -53,6 +59,15 @@ public class DetailController {
       
       model.addAttribute("FOODDETAIL",foodDetailVO);
       model.addAttribute("COMMONDETAIL",CommonDetailVO);
+      
+      for(int i =0; i < AroundList.size(); i++) {
+    	  String dist = AroundList.get(i).dist;
+    	  log.debug("배열1 {}",dist);
+
+    	  String [] distArr = dist.split("[.]");
+    	  log.debug("배열2 {}",distArr[0]);
+    	  AroundList.get(i).setDist(distArr[0]);
+      }
       model.addAttribute("AROUND",AroundList);
       return "/detail/food_detail";
    }
@@ -65,6 +80,12 @@ public class DetailController {
       
       model.addAttribute("LODGEDETAIL",lodgeDetailVO);
       model.addAttribute("COMMONDETAIL",CommonDetailVO);
+      
+      for(int i =0; i < AroundList.size(); i++) {
+    	  String dist = AroundList.get(i).dist;
+    	  String [] distArr = dist.split("[.]");
+    	  AroundList.get(i).setDist( distArr[0]);
+      }
       model.addAttribute("AROUND",AroundList);
       return "/detail/lodge_detail";
    }
